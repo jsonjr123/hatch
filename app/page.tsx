@@ -106,7 +106,7 @@ export default function Home() {
           {/* Tap text */}
           {stage === "idle" && (
             <p
-              className="mt-8 text-amber-200/70 text-lg font-light tracking-wider"
+              className="mt-8 text-white/80 text-lg font-light tracking-wider drop-shadow-md"
               style={{ animation: "textPulse 2s ease-in-out infinite" }}
             >
               Tap the egg

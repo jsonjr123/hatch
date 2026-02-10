@@ -48,8 +48,8 @@ export default function Egg({ stage, crackLevel, onClick }: EggProps) {
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
-          width: 200 + glowIntensity,
-          height: 220 + glowIntensity,
+          width: 300 + glowIntensity,
+          height: 340 + glowIntensity,
           background: `radial-gradient(ellipse, ${glowColor} 0%, transparent 70%)`,
           animation: isIdle ? "glowPulse 2.5s ease-in-out infinite" : undefined,
           willChange: "transform, opacity",
@@ -58,8 +58,8 @@ export default function Egg({ stage, crackLevel, onClick }: EggProps) {
 
       {/* Egg SVG */}
       <svg
-        width="140"
-        height="180"
+        width="220"
+        height="280"
         viewBox="0 0 140 180"
         className="relative z-10"
         aria-label="Egg"
