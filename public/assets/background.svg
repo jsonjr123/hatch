@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a6ea0"/>
+      <stop offset="40%" stop-color="#3a9fd8"/>
+      <stop offset="70%" stop-color="#5ab8e8"/>
+      <stop offset="100%" stop-color="#7ccef0"/>
+    </linearGradient>
+    <!-- Grass gradient -->
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5aaa30"/>
+      <stop offset="50%" stop-color="#3a8a20"/>
+      <stop offset="100%" stop-color="#1a5a10"/>
+    </linearGradient>
+    <!-- Cloud shape reuse -->
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  
+  <!-- Distant haze -->
+  <rect x="0" y="340" width="1200" height="60" fill="#a0d8f0" opacity="0.3"/>
+  
+  <!-- Cloud group - large right cloud (Ghibli towering cumulus) -->
+  <g fill="#fff" opacity="0.95">
+    <ellipse cx="980" cy="200" rx="120" ry="180"/>
+    <ellipse cx="1020" cy="160" rx="100" ry="140"/>
+    <ellipse cx="940" cy="240" rx="100" ry="120"/>
+    <ellipse cx="1060" cy="220" rx="80" ry="100"/>
+    <ellipse cx="1000" cy="100" rx="70" ry="80"/>
+    <ellipse cx="960" cy="300" rx="110" ry="60"/>
+  </g>
+  
+  <!-- Cloud group - left clouds -->
+  <g fill="#fff" opacity="0.9">
+    <ellipse cx="150" cy="260" rx="90" ry="50"/>
+    <ellipse cx="180" cy="240" rx="70" ry="45"/>
+    <ellipse cx="120" cy="270" rx="60" ry="35"/>
+    <ellipse cx="200" cy="255" rx="50" ry="30"/>
+  </g>
+  
+  <!-- Cloud group - center-left -->
+  <g fill="#fff" opacity="0.85">
+    <ellipse cx="480" cy="280" rx="70" ry="40"/>
+    <ellipse cx="510" cy="270" rx="55" ry="35"/>
+    <ellipse cx="450" cy="285" rx="50" ry="30"/>
+  </g>
+  
+  <!-- Wispy clouds -->
+  <g fill="#d0e8f8" opacity="0.5">
+    <rect x="100" y="120" width="200" height="4" rx="2"/>
+    <rect x="400" y="100" width="150" height="3" rx="1.5"/>
+    <rect x="250" y="160" width="180" height="3" rx="1.5"/>
+    <rect x="600" y="140" width="120" height="3" rx="1.5"/>
+  </g>
+  
+  <!-- Horizon glow -->
+  <rect x="0" y="360" width="1200" height="40" fill="#c8e8c0" opacity="0.4"/>
+  
+  <!-- Rolling hills (background) -->
+  <ellipse cx="300" cy="420" rx="400" ry="60" fill="#6ab840"/>
+  <ellipse cx="800" cy="410" rx="500" ry="70" fill="#5aa830"/>
+  <ellipse cx="1100" cy="430" rx="300" ry="50" fill="#6ab840"/>
+  
+  <!-- Main meadow -->
+  <rect x="0" y="400" width="1200" height="400" fill="url(#grass)"/>
+  
+  <!-- Grass texture - light patches -->
+  <g fill="#6aba40" opacity="0.6">
+    <ellipse cx="200" cy="480" rx="80" ry="15"/>
+    <ellipse cx="500" cy="460" rx="100" ry="12"/>
+    <ellipse cx="800" cy="500" rx="90" ry="14"/>
+    <ellipse cx="350" cy="550" rx="70" ry="10"/>
+    <ellipse cx="650" cy="520" rx="85" ry="12"/>
+    <ellipse cx="1000" cy="470" rx="75" ry="11"/>
+  </g>
+  
+  <!-- Orange wildflowers -->
+  <g fill="#e8942a">
+    <circle cx="80" cy="580" r="4"/><circle cx="85" cy="575" r="3"/>
+    <circle cx="150" cy="620" r="4"/><circle cx="155" cy="615" r="3"/>
+    <circle cx="230" cy="560" r="3"/><circle cx="235" cy="555" r="4"/>
+    <circle cx="310" cy="600" r="4"/><circle cx="305" cy="595" r="3"/>
+    <circle cx="400" cy="530" r="3"/><circle cx="395" cy="525" r="3"/>
+    <circle cx="480" cy="570" r="4"/><circle cx="485" cy="565" r="3"/>
+    <circle cx="560" cy="510" r="3"/><circle cx="555" cy="505" r="3"/>
+    <circle cx="640" cy="550" r="4"/><circle cx="645" cy="545" r="3"/>
+    <circle cx="720" cy="490" r="3"/><circle cx="715" cy="485" r="3"/>
+    <circle cx="800" cy="530" r="4"/><circle cx="805" cy="525" r="3"/>
+    <circle cx="880" cy="570" r="3"/><circle cx="875" cy="565" r="4"/>
+    <circle cx="960" cy="510" r="3"/><circle cx="955" cy="505" r="3"/>
+    <circle cx="1040" cy="550" r="4"/><circle cx="1045" cy="545" r="3"/>
+    <circle cx="1120" cy="590" r="3"/><circle cx="1115" cy="585" r="4"/>
+    <!-- More scattered -->
+    <circle cx="120" cy="500" r="3"/><circle cx="350" cy="480" r="3"/>
+    <circle cx="580" cy="470" r="3"/><circle cx="750" cy="450" r="3"/>
+    <circle cx="950" cy="440" r="3"/><circle cx="1100" cy="460" r="3"/>
+    <circle cx="200" cy="450" r="2"/><circle cx="450" cy="440" r="2"/>
+    <circle cx="680" cy="430" r="2"/><circle cx="900" cy="420" r="2"/>
+  </g>
+  
+  <!-- Red/dark orange flowers -->
+  <g fill="#c86020">
+    <circle cx="180" cy="650" r="4"/><circle cx="420" cy="680" r="4"/>
+    <circle cx="650" cy="660" r="3"/><circle cx="900" cy="670" r="4"/>
+    <circle cx="1080" cy="640" r="3"/>
+    <circle cx="300" cy="700" r="4"/><circle cx="550" cy="710" r="3"/>
+    <circle cx="780" cy="690" r="4"/>
+  </g>
+  
+  <!-- Blue flowers (cornflowers) -->
+  <g fill="#5070d0">
+    <circle cx="1050" cy="620" r="5"/><circle cx="1055" cy="615" r="4"/>
+    <circle cx="1070" cy="630" r="4"/><circle cx="1045" cy="625" r="3"/>
+    <circle cx="1100" cy="650" r="5"/><circle cx="1095" cy="645" r="4"/>
+    <circle cx="50" cy="640" r="4"/><circle cx="55" cy="635" r="3"/>
+    <circle cx="70" cy="650" r="4"/>
+    <circle cx="350" cy="660" r="4"/><circle cx="700" cy="640" r="4"/>
+  </g>
+  
+  <!-- Flower stems (subtle) -->
+  <g stroke="#2a6a18" stroke-width="1.5" fill="none" opacity="0.5">
+    <line x1="80" y1="580" x2="78" y2="610"/>
+    <line x1="230" y1="560" x2="228" y2="590"/>
+    <line x1="480" y1="570" x2="478" y2="600"/>
+    <line x1="720" y1="490" x2="718" y2="520"/>
+    <line x1="1050" y1="620" x2="1048" y2="660"/>
+    <line x1="1100" y1="650" x2="1098" y2="690"/>
+  </g>
+  
+  <!-- Foreground dark foliage -->
+  <g fill="#1a4a08" opacity="0.7">
+    <ellipse cx="60" cy="750" rx="80" ry="30"/>
+    <ellipse cx="200" cy="770" rx="100" ry="35"/>
+    <ellipse cx="500" cy="760" rx="90" ry="30"/>
+    <ellipse cx="750" cy="755" rx="100" ry="32"/>
+    <ellipse cx="1000" cy="765" rx="80" ry="28"/>
+    <ellipse cx="1150" cy="750" rx="70" ry="30"/>
+  </g>
+  
+  <!-- Foreground grass blades -->
+  <g stroke="#2a5a10" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M30,800 Q35,740 25,720"/>
+    <path d="M60,800 Q55,750 65,730"/>
+    <path d="M100,800 Q105,745 95,725"/>
+    <path d="M1100,800 Q1095,750 1105,730"/>
+    <path d="M1140,800 Q1145,740 1135,720"/>
+  </g>
+</svg>

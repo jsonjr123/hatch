@@ -10,7 +10,7 @@ export default function Background({ stage }: { stage: Stage }) {
     <div className="fixed inset-0 overflow-hidden">
       {/* Background image */}
       <img
-        src="/assets/background.png"
+        src="/assets/background.svg"
         alt=""
         className="absolute inset-0 w-full h-full"
         style={{ objectFit: "cover" }}

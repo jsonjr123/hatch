@@ -23,13 +23,11 @@ export default function Creature({ visible }: { visible: boolean }) {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
           <img
-            src="/assets/dino.png"
+            src="/assets/dino.svg"
             alt="Baby dinosaur"
             style={{
               width: 400,
               height: 400,
-              objectFit: "contain",
-              imageRendering: "pixelated",
               filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.2))",
             }}
           />
