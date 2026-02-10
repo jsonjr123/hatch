@@ -17,6 +17,17 @@ import {
   WhiteFlash,
 } from "./particles";
 
+/** Centralised timing constants (ms) */
+const TIMING = {
+  wobbleCrack1: 1500,
+  wobbleCrack2: 2500,
+  wobbleCrack3: 3500,
+  wobbleToCrack: 4000,
+  crackToBurst: 2000,
+  burstToReveal: 1500,
+  revealToast: 800,
+} as const;
+
 interface HatchExperienceProps {
   onComplete?: () => void;
 }
@@ -32,10 +43,10 @@ export default function HatchExperience({ onComplete }: HatchExperienceProps) {
   // Wobble → crack progression
   useEffect(() => {
     if (stage !== "wobble") return;
-    const t1 = setTimeout(() => setCrackLevel(1), 1500);
-    const t2 = setTimeout(() => setCrackLevel(2), 2500);
-    const t3 = setTimeout(() => setCrackLevel(3), 3500);
-    const t4 = setTimeout(() => setStage("crack"), 4000);
+    const t1 = setTimeout(() => setCrackLevel(1), TIMING.wobbleCrack1);
+    const t2 = setTimeout(() => setCrackLevel(2), TIMING.wobbleCrack2);
+    const t3 = setTimeout(() => setCrackLevel(3), TIMING.wobbleCrack3);
+    const t4 = setTimeout(() => setStage("crack"), TIMING.wobbleToCrack);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -48,14 +59,14 @@ export default function HatchExperience({ onComplete }: HatchExperienceProps) {
   useEffect(() => {
     if (stage !== "crack") return;
     setCrackLevel(3);
-    const t = setTimeout(() => setStage("burst"), 2000);
+    const t = setTimeout(() => setStage("burst"), TIMING.crackToBurst);
     return () => clearTimeout(t);
   }, [stage]);
 
   // Burst → reveal
   useEffect(() => {
     if (stage !== "burst") return;
-    const t = setTimeout(() => setStage("reveal"), 1500);
+    const t = setTimeout(() => setStage("reveal"), TIMING.burstToReveal);
     return () => clearTimeout(t);
   }, [stage]);
 
@@ -65,7 +76,7 @@ export default function HatchExperience({ onComplete }: HatchExperienceProps) {
     const t = setTimeout(() => {
       toast.success("A new friend has hatched! 🐣");
       onComplete?.();
-    }, 800);
+    }, TIMING.revealToast);
     return () => clearTimeout(t);
   }, [stage, onComplete]);
 

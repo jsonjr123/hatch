@@ -147,17 +147,6 @@ export function BurstSparkles({ visible }: { visible: boolean }) {
   );
 }
 
-export function NestBase({ visible }: { visible: boolean }) {
-  if (!visible) return null;
-  return (
-    <svg width="160" height="50" viewBox="0 0 160 50" className="relative z-10">
-      <ellipse cx="80" cy="25" rx="70" ry="22" fill="#c49a3c" opacity="0.6" />
-      <ellipse cx="80" cy="25" rx="60" ry="18" fill="#d4a855" opacity="0.5" />
-      <ellipse cx="80" cy="30" rx="55" ry="15" fill="#8d6e3f" opacity="0.4" />
-    </svg>
-  );
-}
-
 export function RevealSparkles({ visible }: { visible: boolean }) {
   const positions = [
     { x: -40, y: -50 }, { x: 40, y: -40 }, { x: -50, y: 10 },

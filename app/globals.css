@@ -2,17 +2,6 @@
 
 :root {
   --bg-dark: #0a0a0a;
-  --bg-warm: #1a1008;
-  --egg-shell: #e8c87a;
-  --egg-shell-dark: #c49a3c;
-  --egg-pattern: #d4a855;
-  --glow-gold: #ffd54f;
-  --glow-warm: rgba(255, 213, 79, 0.4);
-  --teal: #4db6ac;
-  --teal-light: #80cbc4;
-  --green-soft: #66bb6a;
-  --petal-pink: #f8bbd0;
-  --crack-light: #fff9c4;
 }
 
 * {

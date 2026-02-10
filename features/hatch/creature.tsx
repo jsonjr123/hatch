@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Creature({ visible }: { visible: boolean }) {
@@ -15,21 +16,20 @@ export default function Creature({ visible }: { visible: boolean }) {
       <motion.div
         animate={{ scaleY: [1, 1.03, 1], scaleX: [1, 0.98, 1] }}
         transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, delay: 1 }}
-        style={{ transformOrigin: "center bottom" }}
+        className="origin-bottom"
       >
         <motion.div
           initial={{ y: 0 }}
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
-          <img
-            src="/assets/dino.svg"
+          <Image
+            src="/assets/dino.webp"
             alt="Baby dinosaur"
-            style={{
-              width: 400,
-              height: 400,
-              filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.2))",
-            }}
+            width={400}
+            height={360}
+            className="drop-shadow-lg"
+            draggable={false}
           />
         </motion.div>
       </motion.div>

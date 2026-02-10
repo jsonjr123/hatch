@@ -1,11 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const router = useRouter();
-
   return (
     <main className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Subtle background glow */}
@@ -38,17 +36,17 @@ export default function Home() {
           </p>
         </div>
 
-        <motion.button
-          onClick={() => router.push("/hatch")}
-          className="mt-4 px-8 py-3 rounded-full bg-violet-600 text-white font-medium text-lg
-                     hover:bg-violet-500 active:bg-violet-700
-                     shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40
-                     transition-colors cursor-pointer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          Get started
-        </motion.button>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <Link
+            href="/hatch"
+            className="mt-4 inline-block px-8 py-3 rounded-full bg-violet-600 text-white font-medium text-lg
+                       hover:bg-violet-500 active:bg-violet-700
+                       shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40
+                       transition-colors cursor-pointer"
+          >
+            Get started
+          </Link>
+        </motion.div>
       </motion.div>
     </main>
   );
