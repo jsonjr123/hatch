@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { type Stage } from "@/components/types";
 import Background from "@/components/background";
@@ -60,11 +61,17 @@ export default function Home() {
   const showShake = stage === "wobble" && crackLevel >= 3;
 
   return (
-    <main
+    <motion.main
       className="relative w-screen h-screen overflow-hidden select-none"
-      style={{
-        animation: showShake ? "shake 0.15s ease-in-out infinite" : undefined,
-      }}
+      animate={
+        showShake
+          ? {
+              x: [0, -3, 4, -2, 3, -4, 2, -3, 4, -2, 0],
+              y: [0, 2, -2, 3, -3, 1, -2, 3, -1, 2, 0],
+            }
+          : { x: 0, y: 0 }
+      }
+      transition={showShake ? { duration: 0.15, ease: "easeInOut", repeat: Infinity } : {}}
     >
       <Background stage={stage} />
 
@@ -88,32 +95,50 @@ export default function Home() {
           )}
 
           {/* Egg */}
-          <Egg stage={stage} crackLevel={crackLevel} onClick={handleEggClick} />
+          <AnimatePresence>
+            {stage !== "burst" && stage !== "reveal" && (
+              <motion.div key="egg" exit={{ scale: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
+                <Egg stage={stage} crackLevel={crackLevel} onClick={handleEggClick} />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Nest + Creature */}
-          {(stage === "burst" || stage === "reveal") && (
-            <div className="flex flex-col items-center -mt-4">
-              <Creature visible={stage === "reveal"} />
-              <NestBase visible />
-              {stage === "reveal" && (
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <RevealSparkles visible />
-                </div>
-              )}
-            </div>
-          )}
+          <AnimatePresence>
+            {(stage === "burst" || stage === "reveal") && (
+              <motion.div
+                key="creature-area"
+                className="flex flex-col items-center -mt-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <Creature visible={stage === "reveal"} />
+                <NestBase visible />
+                {stage === "reveal" && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <RevealSparkles visible />
+                  </div>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Tap text */}
-          {stage === "idle" && (
-            <p
-              className="mt-8 text-white/80 text-lg font-light tracking-wider drop-shadow-md"
-              style={{ animation: "textPulse 2s ease-in-out infinite" }}
-            >
-              Tap the egg
-            </p>
-          )}
+          <AnimatePresence>
+            {stage === "idle" && (
+              <motion.p
+                className="mt-8 text-white/80 text-lg font-light tracking-wider drop-shadow-md"
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+                exit={{ opacity: 0 }}
+              >
+                Tap the egg
+              </motion.p>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }
