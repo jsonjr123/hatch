@@ -22,13 +22,19 @@ export default function Creature({ visible }: { visible: boolean }) {
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
-          <img
-            src="/assets/dragon.png"
-            alt="Baby dragon"
+          <div
             style={{
-              width: 200,
+              width: 220,
+              height: 220,
+              backgroundImage: "url(/assets/dragon-clean.png)",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
               imageRendering: "pixelated",
+              filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.2))",
             }}
+            role="img"
+            aria-label="Baby dragon"
           />
         </motion.div>
       </motion.div>
