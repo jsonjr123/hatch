@@ -68,8 +68,8 @@ export default function Egg({ stage, crackLevel, onClick }: EggProps) {
       <motion.div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
-          width: 300 + glowIntensity,
-          height: 340 + glowIntensity,
+          width: 420 + glowIntensity,
+          height: 480 + glowIntensity,
           background: `radial-gradient(ellipse, ${glowColor} 0%, transparent 70%)`,
         }}
         animate={
@@ -82,8 +82,8 @@ export default function Egg({ stage, crackLevel, onClick }: EggProps) {
 
       {/* Egg SVG */}
       <motion.svg
-        width="220"
-        height="280"
+        width="320"
+        height="400"
         viewBox="0 0 140 180"
         className="relative z-10"
         aria-label="Egg"

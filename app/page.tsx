@@ -13,7 +13,6 @@ import {
   ShellPieces,
   EnergyRing,
   BurstSparkles,
-  NestBase,
   RevealSparkles,
   WhiteFlash,
 } from "@/components/particles";
@@ -114,7 +113,6 @@ export default function Home() {
                 exit={{ opacity: 0 }}
               >
                 <Creature visible={stage === "reveal"} />
-                <NestBase visible />
                 {stage === "reveal" && (
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <RevealSparkles visible />
