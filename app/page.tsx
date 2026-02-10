@@ -128,10 +128,12 @@ export default function Home() {
           <AnimatePresence>
             {stage === "idle" && (
               <motion.p
+                key="tap-text"
                 className="mt-8 text-white/80 text-lg font-light tracking-wider drop-shadow-md"
+                initial={{ opacity: 0 }}
                 animate={{ opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
               >
                 Tap the egg
               </motion.p>

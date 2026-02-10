@@ -24,8 +24,8 @@ export default function Creature({ visible }: { visible: boolean }) {
         >
           <div
             style={{
-              width: 220,
-              height: 220,
+              width: 320,
+              height: 320,
               backgroundImage: "url(/assets/dragon-clean.png)",
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
